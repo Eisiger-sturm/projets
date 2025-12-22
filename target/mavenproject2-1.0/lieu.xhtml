@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<head>
+    <title>Ajouter un lieu</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+</head>
+
+<body class="bg-light p-4">
+
+<div class="container mt-4 p-4 bg-white shadow rounded" style="max-width: 500px;">
+    <h3 class="text-center mb-3 text-primary">Ajouter un lieu</h3>
+
+    <h:form>
+        <div class="mb-3">
+            <label>Nom :</label>
+            <h:inputText value="#{lieuController.nom}" styleClass="form-control"/>
+        </div>
+
+        <div class="mb-3">
+            <label>Description :</label>
+            <h:inputTextarea value="#{lieuController.description}" styleClass="form-control"/>
+        </div>
+
+        <div class="mb-3">
+            <label>Latitude :</label>
+            <h:inputText value="#{lieuController.latitude}" styleClass="form-control"/>
+        </div>
+
+        <div class="mb-3">
+            <label>Longitude :</label>
+            <h:inputText value="#{lieuController.longitude}" styleClass="form-control"/>
+        </div>
+
+        <!-- Bouton Enregistrer en vert -->
+        <h:commandButton value="Enregistrer"
+                         action="#{lieuController.enregistrer}"
+                         styleClass="btn btn-success w-100"/>
+    </h:form>
+
+    <div class="text-center mt-3">
+        <!-- Bouton Retour en bleu ciel plus foncé -->
+        <h:commandButton value="Retour"
+                         action="#{navigationController.home}"
+                         styleClass="btn w-100"
+                         style="background-color:#4682B4; color:white;"/>
+    </div>
+
+</div>
+
+</body>
+</html>
